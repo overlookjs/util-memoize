@@ -9,7 +9,26 @@
 
 ## Usage
 
-This module is under development and not ready for use yet.
+Memoize a class extension function.
+
+This prevents multiple subclasses being created, where `extend()` is called multiple times to extend the same class.
+
+```js
+// Define Route class extension
+const memoize = require('@overlook/util-memoize');
+
+const extend = memoize(function(Route) {
+  return class MyExtendedRouteClass extends Route {
+    /* ... */
+  };
+});
+
+// Use it
+const {Route} = require('@overlook/framework');
+const RouteSubclass = extend(Route);
+const RouteSubclass2 = extend(Route);
+// RouteSubclass2 === RouteSubclass
+```
 
 ## Tests
 
