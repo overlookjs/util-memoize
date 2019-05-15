@@ -1,6 +1,6 @@
 {
   "name": "@overlook/util-memoize",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Overlook framework memoize utility function",
   "main": "index.js",
   "author": {
