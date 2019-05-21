@@ -4,6 +4,9 @@
 
 'use strict';
 
+// Modules
+const {isFunction} = require('core-util-is');
+
 // Exports
 
 /**
@@ -12,9 +15,7 @@
  * @returns {Function} - Memoized version of function
  */
 module.exports = function memoize(extend) {
-	if (typeof extend !== 'function') {
-		throw new Error('extend must be a function');
-	}
+	if (!isFunction(extend)) throw new Error('extend must be a function');
 
 	// Return function that uses cache
 	const cache = new Map();
